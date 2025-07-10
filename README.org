@@ -1,0 +1,2 @@
+* ThreeJS Playground
+This is just an environment for me to learn and play with threejs.
