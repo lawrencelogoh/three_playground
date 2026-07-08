@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import GUI from "lil-gui";
 
 const canvas = document.querySelector("canvas.webgl");
 const scene = new THREE.Scene();
@@ -33,6 +34,14 @@ geometry.setAttribute("position", new THREE.BufferAttribute(vertices, 3));
 const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
 
 const mesh = new THREE.Mesh(geometry, material);
+
+// Debug UI stuff
+// Simple mesh position debug ui
+const gui = new GUI();
+
+gui.add(mesh.position, "y").min(-1).max(1).step(0.01);
+gui.add(material, "wireframe");
+// Example of
 
 scene.add(mesh);
 const sizes = {
